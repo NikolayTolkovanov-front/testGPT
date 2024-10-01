@@ -784,7 +784,7 @@ svg path {
   padding: 18px 0;
 }
 
-.messages .answer {
+.messages .question {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -794,7 +794,7 @@ svg path {
           flex-direction: column;
 }
 
-.messages .answer__body {
+.messages .question__body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -807,17 +807,17 @@ svg path {
   gap: 10px;
 }
 
-.messages .answer__body:hover .answer__change-btn {
+.messages .question__body:hover .question__change-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.messages .answer__body.hidden {
+.messages .question__body.hidden {
   display: none;
 }
 
-.messages .answer__change-btn {
+.messages .question__change-btn {
   width: 36px;
   height: 36px;
   -webkit-box-flex: 0;
@@ -836,17 +836,17 @@ svg path {
   display: none;
 }
 
-.messages .answer__change-btn:hover {
+.messages .question__change-btn:hover {
   background-color: #424242;
 }
 
-.messages .answer__change-btn svg {
+.messages .question__change-btn svg {
   width: 18px;
   height: 18px;
   fill: #ececec;
 }
 
-.messages .answer__message-text {
+.messages .question__message-text {
   max-width: 70%;
   padding: 10px 20px;
   background-color: #2f2f2f;
@@ -858,7 +858,7 @@ svg path {
   line-height: 24px;
 }
 
-.messages .change-answer {
+.messages .change-question {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -872,11 +872,11 @@ svg path {
   padding: 12px;
 }
 
-.messages .change-answer.hidden {
+.messages .change-question.hidden {
   display: none;
 }
 
-.messages .change-answer__text {
+.messages .change-question__text {
   max-height: 25dvh;
   overflow: auto;
   display: -ms-grid;
@@ -885,7 +885,7 @@ svg path {
   scrollbar-color: #676767 transparent;
 }
 
-.messages .change-answer__textarea {
+.messages .change-question__textarea {
   -ms-grid-row: 1;
       grid-row-start: 1;
   -ms-grid-row-span: 1;
@@ -904,7 +904,7 @@ svg path {
   color: #ececec;
 }
 
-.messages .change-answer__btns {
+.messages .change-question__btns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -914,25 +914,25 @@ svg path {
           justify-content: end;
 }
 
-.messages .change-answer__btns .btn-escape {
+.messages .change-question__btns .btn-escape {
   background-color: #212121;
   color: #ececec;
 }
 
-.messages .change-answer__btns .btn-escape:hover {
+.messages .change-question__btns .btn-escape:hover {
   background-color: #2f2f2f;
 }
 
-.messages .change-answer__btns .btn-submit {
+.messages .change-question__btns .btn-submit {
   background-color: #f9f9f9;
   color: #212121;
 }
 
-.messages .change-answer__btns .btn-submit:hover {
+.messages .change-question__btns .btn-submit:hover {
   background-color: #ececec;
 }
 
-.messages .change-answer__btn {
+.messages .change-question__btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -951,21 +951,29 @@ svg path {
   padding: 8px 14px;
 }
 
-.messages .question {
+.messages .answer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 16px;
 }
 
-.messages .question__content {
+.messages .answer:hover .answer__btns {
+  opacity: 1;
+}
+
+.messages .answer__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 16px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
 }
 
-.messages .question__icon {
+.messages .answer__icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -984,14 +992,14 @@ svg path {
   overflow: hidden;
 }
 
-.messages .question__icon img {
+.messages .answer__icon img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.messages .question__message-text {
+.messages .answer__message-text {
   padding-top: 3px;
   white-space: normal;
   font-size: 16px;
@@ -999,6 +1007,41 @@ svg path {
   line-height: 28px;
   color: #ececec;
   word-break: break-all;
+}
+
+.messages .answer__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0;
+}
+
+.messages .answer__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  height: 30px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30px;
+          flex: 0 0 30px;
+  border-radius: 8px;
+}
+
+.messages .answer__btn:hover {
+  background-color: #424242;
+}
+
+.messages .answer__btn svg {
+  width: 18px;
+  height: 18px;
+  fill: #ececec;
 }
 
 .input-container {
@@ -1462,6 +1505,9 @@ svg path {
           flex-direction: column;
   width: 100%;
   height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1497,6 +1543,7 @@ svg path {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-bottom: 20px;
 }
 
 .empty-btns .empty-btn {
@@ -1993,6 +2040,10 @@ svg path {
   }
 
   .tippy-box[data-theme~=text] {
+    display: none;
+  }
+
+  .empty-btns .empty-btn:nth-child(n+3) {
     display: none;
   }
 }

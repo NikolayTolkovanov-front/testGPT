@@ -99,6 +99,12 @@ function tippyAll() {{
   const headerProfileBtn =  document.querySelector('.header-profile__btn')
   const headerProfileMenu = document.querySelector('#header-profile-menu')
 
+  const copyTextBtn = document.querySelector('#copy-text-btn')
+  const copyTextPopup = document.querySelector('#copy-text-popup')
+  const regenerateTextBtn = document.querySelector('#regenerate-text-btn')
+  const regenerateTextPopup = document.querySelector('#regenerate-text-popup')
+
+
   if (toggleNavBtn && toggleNavTextPopup) {
     tippy(toggleNavBtn, {
       content: toggleNavTextPopup.innerHTML,
@@ -206,6 +212,30 @@ function tippyAll() {{
       arrow: false,
       placement: "bottom-start",
       theme: "list",
+    })
+  }
+
+  if (copyTextBtn && copyTextPopup) {
+    tippy(copyTextBtn, {
+      content: copyTextPopup.innerHTML,
+      trigger: 'mouseenter',
+      allowHTML: true,
+      arrow: true,
+      placement: "bottom",
+      animation: false,
+      theme: "text",
+    })
+  }
+
+  if (regenerateTextBtn && regenerateTextPopup) {
+    tippy(regenerateTextBtn, {
+      content: regenerateTextPopup.innerHTML,
+      trigger: 'mouseenter',
+      allowHTML: true,
+      arrow: true,
+      placement: "bottom",
+      animation: false,
+      theme: "text",
     })
   }
 }}
