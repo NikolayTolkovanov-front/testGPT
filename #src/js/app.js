@@ -96,7 +96,7 @@ function tippyAll() {{
   const headerChatList = document.querySelector('.header__chat-btn-wrapper')
   const headerMenuPopup = document.querySelector('#header-chat-menu')
 
-  const headerProfile =  document.querySelector('.header-profile')
+  const headerProfileBtn =  document.querySelector('.header-profile__btn')
   const headerProfileMenu = document.querySelector('#header-profile-menu')
 
   if (toggleNavBtn && toggleNavTextPopup) {
@@ -198,8 +198,8 @@ function tippyAll() {{
     })
   }
 
-  if (headerProfile && headerProfileMenu) {
-    tippy(headerProfile, {
+  if (headerProfileBtn && headerProfileMenu) {
+    tippy(headerProfileBtn, {
       content: headerProfileMenu.innerHTML,
       trigger: 'click',
       allowHTML: true,
