@@ -1,0 +1,180 @@
+.scroll-container {
+  overflow: auto;
+  scrollbar-color: $ternary transparent;
+  flex-grow: 1;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+
+  .message {
+    width: 100%;
+    padding: 18px 0;
+  }
+
+  .answer {
+    display: flex;
+    flex-direction: column;
+
+    &__body {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 10px;
+
+      &:hover {
+        .answer__change-btn {
+          display: flex;
+        }
+      }
+
+      &.hidden {
+        display: none;
+      }
+    }
+
+    &__change-btn {
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      border-radius: 9999px;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.1s;
+      display: none;
+
+      &:hover {
+        background-color: $ternary;
+      }
+
+      & svg {
+        width: 18px;
+        height: 18px;
+        fill: $primary;
+      }
+    }
+
+    &__message-text {
+      max-width: 70%;
+      padding: 10px 20px;
+      background-color: #2f2f2f;
+      white-space: pre-wrap;
+      color: $primary;
+      border-radius: 24px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+
+  .change-answer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 24px;
+    background-color: $ternary;
+    padding: 12px;
+
+    &.hidden {
+      display: none;
+    }
+
+    &__text {
+      max-height: 25dvh;
+      overflow: auto;
+      display: grid;
+      margin: 8px;
+      scrollbar-color: #676767 transparent;
+    }
+
+    &__textarea {
+      grid-row-start: 1;
+      grid-row-end: 2;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      width: 100%;
+      resize: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: transparent;
+      border: none;
+      color: $primary;
+    }
+
+    &__btns {
+      display: flex;
+      gap: 8px;
+      justify-content: end;
+
+      .btn-escape {
+        background-color: $secondary;
+        color: $primary;
+
+        &:hover {
+          background-color: #2f2f2f;
+        }
+      }
+
+      .btn-submit {
+        background-color: rgb(249, 249, 249);
+        color: $secondary;
+
+        &:hover {
+          background-color: $primary;
+        }
+      }
+    }
+
+    &__btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      padding: 8px 14px;
+    }
+  }
+
+  .question {
+    display: flex;
+    gap: 16px;
+
+    &__content {
+      display: flex;
+      gap: 16px;
+    }
+
+    &__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
+      border-radius: 9999px;
+      overflow: hidden;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__message-text {
+      padding-top: 3px;
+      white-space: normal;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+      color: $primary;
+      word-break: break-all;
+    }
+  }
+}
+

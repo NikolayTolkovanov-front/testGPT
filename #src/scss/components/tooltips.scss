@@ -1,0 +1,261 @@
+.tippy-box[data-theme~="list"] {
+  padding: 8px;
+  border-radius: 16px;
+
+  .tippy-content {
+    padding: 0;
+  }
+
+  .popup-list {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+      border-radius: 10px;
+      transition: 0.1s;
+
+      &:hover {
+        background: $ternary;
+      }
+    }
+
+    &__link {
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    &__item-icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+
+      & svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        fill: $primary;
+      }
+    }
+
+    &__item-text {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      color: $primary;
+      text-align: left;
+    }
+
+    .separator {
+      width: 100%;
+      height: 1px;
+      background-color: hsla(0, 0%, 100%, 0.1);
+      margin: 5px 0;
+    }
+
+    #delete-chat-link {
+      .popup-list__item-text {
+        color: red;
+      }
+
+      .popup-list__item-icon svg {
+        fill: red;
+      }
+    }
+
+    #input-file-link {
+      .popup-list__item-icon svg {
+        fill: $primary;
+      }
+    }
+  }
+
+  .header-chat {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $ternary;
+      }
+    }
+
+    &__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 28px;
+      height: 28px;
+      flex: 0 0 28px;
+      border-radius: 9999px;
+      background-color: $ternary;
+
+      & svg {
+        width: 16px;
+        height: 16px;
+        object-fit: cover;
+        fill: $primary;
+      }
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+
+      &-title {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: $primary;
+      }
+
+      &-subtitle {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        color: $primary;
+      }
+    }
+
+    &__btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      border: 1px solid hsla(0, 0%, 100%, 0.15);
+      border-radius: 9999px;
+      padding: 4px 12px;
+      background-color: transparent;
+      color: $primary;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+
+      &:hover {
+        background-color: #2f2f2f;
+      }
+    }
+
+    &__icon--left {
+      width: 18px;
+      height: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 0 0 18px;
+
+      & svg {
+        width: 100%;
+        height: 100%;
+        fill: $primary;
+      }
+    }
+
+    .checkbox-wrapper {
+      & input[type="checkbox"] {
+        visibility: hidden;
+        display: none;
+      }
+
+      & *,
+      & ::after,
+      & ::before {
+        box-sizing: border-box;
+      }
+
+      /* The switch - the box around the slider */
+      & .switch {
+        font-size: 10px;
+        position: relative;
+        display: inline-block;
+        width: 3.2em;
+        height: 2em;
+      }
+
+      /* Hide default HTML checkbox */
+      & .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      /* The slider */
+      & .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        transition: 0.4s;
+        border-radius: 30px;
+      }
+
+      & .slider:before {
+        position: absolute;
+        content: "";
+        height: 1.5em;
+        width: 1.5em;
+        border-radius: 20px;
+        left: 0.2em;
+        bottom: 0.2em;
+        background-color: #fff;
+        transition: 0.4s;
+      }
+
+      & input:checked + .slider {
+        background-color: rgb(16 163 127);
+        border: 1px solid rgb(16 163 127);
+      }
+
+      & input:checked + .slider:before {
+        transform: translateX(1.3em);
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.tippy-box[data-theme~="text"] {
+  background-color: black;
+  border-radius: 8px;
+  padding: 8px 12px;
+
+  &[data-placement^="top"] > .tippy-arrow::before {
+    border-top-color: black;
+  }
+
+  &[data-placement^="right"] > .tippy-arrow::before {
+    border-right-color: black;
+  }
+
+  &[data-placement^="bottom"] > .tippy-arrow::before {
+    border-bottom-color: black;
+  }
+
+  .tippy-content {
+    padding: 0;
+  }
+
+  .text-popup-content {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: $md) {
+  .tippy-box[data-theme~="text"] {
+    display: none;
+  }
+}
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { "title": "Главная", })
+  <body>
+    <div class="auth-wrapper">
+      <header class="auth-header">
+        <img
+          src="https://auth.openai.com/assets/openai-logo-DmWoKcI3.svg"
+          alt=""
+        />
+      </header>
+      <main class="main-container">
+        <section class="content-wrapper">
+          <div class="title-wrapper"><h1 class="title">С возвращением</h1></div>
+          <div class="login-container">
+            <div class="input-wrapper">
+              <input
+                class="email-input"
+                inputmode="email"
+                type="email"
+                id="email-input"
+                name="email"
+                autocomplete="username"
+                autocapitalize="none"
+                spellcheck="false"
+                required=""
+                placeholder=""
+              /><label class="email-label filled" for="email-input"
+                >Адрес электронной почты</label
+              >
+              <div class="invalid-email-error-message">
+                <img
+                  class="error-icon"
+                  src="/assets/error-icon-BaFi8GTB.svg"
+                />Недопустимый адрес электронной почты.
+              </div>
+              <div class="invalid-email-error-message">
+                <img
+                  class="error-icon"
+                  src="/assets/error-icon-BaFi8GTB.svg"
+                />Ваша организация требует использовать систему единого входа
+                SSO. Вместо этого нажмите «Продолжить», чтобы войти с помощью
+                SSO.
+              </div>
+            </div>
+            <button class="continue-btn" disabled="">Продолжить</button>
+            <p class="other-page">
+              У вас нет учетной записи?
+              <a
+                class="other-page-link"
+                href="https://auth.openai.com/authorize?client_id=TdJIcbe16WoTHtN95nyywh5E4yOo6ItG&amp;scope=openid+email+profile+offline_access+model.request+model.read+organization.read+organization.write&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Fchatgpt.com%2Fapi%2Fauth%2Fcallback%2Flogin-web&amp;audience=https%3A%2F%2Fapi.openai.com%2Fv1&amp;device_id=b581b21e-51a5-4d8d-86c4-0919773bcf37&amp;prompt=login&amp;screen_hint=signup&amp;ext-oai-did=b581b21e-51a5-4d8d-86c4-0919773bcf37&amp;flow=control&amp;state=x_zxNZeqWJiEI5Ta2uh0qVrO_OALwAEs5h8ognQolYA&amp;code_challenge=f2A1bzzQ5P3PA6BnCbwJsMciiFLAxszEf0ijAq3lCFc&amp;code_challenge_method=S256"
+                >Зарегистрироваться</a
+              >
+            </p>
+            <div class="divider-wrapper"><span class="divider">или</span></div>
+            <div class="social-section">
+              <button class="social-btn">
+                <span class="social-logo-wrapper"
+                  ><img
+                    class="social-logo"
+                    src="/assets/google-logo-NePEveMl.svg"
+                    alt="Логотип Google" /></span
+                ><span class="social-text">Продолжить с Google</span></button
+              ><button class="social-btn">
+                <span class="social-logo-wrapper"
+                  ><img
+                    class="social-logo"
+                    src="/assets/microsoft-logo-BUXxQnXH.svg"
+                    alt="Логотип Microsoft" /></span
+                ><span class="social-text"
+                  >Продолжить с учетной записью Microsoft</span
+                ></button
+              ><button class="social-btn">
+                <span class="social-logo-wrapper"
+                  ><img
+                    class="social-logo"
+                    src="/assets/apple-logo-tAoxPOUx.svg"
+                    alt="Логотип Apple" /></span
+                ><span class="social-text">Продолжить с Apple</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="auth-footer"></footer>
+    </div>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
