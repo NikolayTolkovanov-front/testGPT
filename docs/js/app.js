@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   toggleAside()
   toggleAsideByOverflow()
   tippyAll()
-  toggleChangeAnswer()
+  toggleChangeQuestion()
 });
 
 function isWebP() {
@@ -300,30 +300,30 @@ function addFile() {
   }
 }
 
-function toggleChangeAnswer() {
-  const answers = document.querySelectorAll('.answer')
+function toggleChangeQuestion() {
+  const questions = document.querySelectorAll('.question')
 
-  if (answers.length) {
-    for (let answer of answers) {
-      const changeAnswerBtn = answer.querySelector('.answer__change-btn')
-      const escapeAnswerBtn = answer.querySelector('.btn-escape')
+  if (questions.length) {
+    for (let question of questions) {
+      const changeQuestionBtn = question.querySelector('.question__change-btn')
+      const escapeQuestionBtn = question.querySelector('.btn-escape')
 
-      if (changeAnswerBtn && escapeAnswerBtn) {
-        const answerTextBody = answer.querySelector('.answer__body')
-        const changeAnswerBody = answer.querySelector('.change-answer')
+      if (changeQuestionBtn && escapeQuestionBtn) {
+        const questionTextBody = question.querySelector('.question__body')
+        const changeQuestionBody = question.querySelector('.change-question')
 
-        changeAnswerBtn.addEventListener('click', function(event) {
+        changeQuestionBtn.addEventListener('click', function(event) {
           event.preventDefault()
 
-          answerTextBody.classList.add('hidden')
-          changeAnswerBody.classList.remove('hidden')
+          questionTextBody.classList.add('hidden')
+          changeQuestionBody.classList.remove('hidden')
         })
 
-        escapeAnswerBtn.addEventListener('click', function(event) {
+        escapeQuestionBtn.addEventListener('click', function(event) {
           event.preventDefault()
 
-          answerTextBody.classList.remove('hidden')
-          changeAnswerBody.classList.add('hidden')
+          questionTextBody.classList.remove('hidden')
+          changeQuestionBody.classList.add('hidden')
         })
       }
     }
