@@ -1,14 +1,12 @@
-
-
 document.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM LOADED");
-  isWebP()
-  addFile()
-  changeColorSubmitBtn()
-  toggleAside()
-  toggleAsideByOverflow()
-  tippyAll()
-  toggleChangeQuestion()
+  isWebP();
+  addFile();
+  changeColorSubmitBtn();
+  toggleAside();
+  toggleAsideByOverflow();
+  tippyAll();
+  toggleChangeQuestion();
 });
 
 function isWebP() {
@@ -36,7 +34,7 @@ function toggleAside() {
   };
 
   const aside = document.querySelector("nav.aside");
-  const overflow = document.querySelector('.overflow')
+  const overflow = document.querySelector(".overflow");
 
   if (aside) {
     for (let btn in toggleAsideBtns) {
@@ -47,13 +45,13 @@ function toggleAside() {
           } else {
             aside.classList.add("hidden");
           }
-  
+
           if (btn === "aside") {
             toggleAsideBtns["header"].classList.remove("hidden");
-            overflow.classList.add('hidden')
+            overflow.classList.add("hidden");
           } else if (btn === "header") {
             toggleAsideBtns["header"].classList.add("hidden");
-            overflow.classList.remove('hidden')
+            overflow.classList.remove("hidden");
           }
         });
       }
@@ -62,183 +60,203 @@ function toggleAside() {
 }
 
 function toggleAsideByOverflow() {
-  const aside = document.querySelector("nav.aside")
-  const overflow = document.querySelector('.overflow')
+  const aside = document.querySelector("nav.aside");
+  const overflow = document.querySelector(".overflow");
 
   if (aside && overflow) {
-    const headerToggleBtn = document.querySelector('.header__toggle-btn')
+    const headerToggleBtn = document.querySelector(".header__toggle-btn");
 
-    overflow.addEventListener('click', function() {
-      aside.classList.add("hidden")
-      overflow.classList.add('hidden')
-      headerToggleBtn.classList.remove('hidden')
-    })
+    overflow.addEventListener("click", function () {
+      aside.classList.add("hidden");
+      overflow.classList.add("hidden");
+      headerToggleBtn.classList.remove("hidden");
+    });
   }
 }
 
-function tippyAll() {{
-  const toggleNavBtn = document.querySelector('.toggle-nav')
-  const toggleNavTextPopup = document.querySelector('#toggle-nav-text-popup')
-  
-  const newChatBtn = document.querySelector('.new-chat')
-  const newChatTextPopup = document.querySelector('#new-chat-text-popup')
+function tippyAll() {
+  {
+    const toggleNavBtn = document.querySelector(".toggle-nav");
+    const toggleNavTextPopup = document.querySelector("#toggle-nav-text-popup");
 
-  const botsListItems = document.querySelectorAll('.bots-list__item')
-  const botsListTextPopup = document.querySelector('#bots-list-text-popup')
+    const newChatBtn = document.querySelector(".new-chat");
+    const newChatTextPopup = document.querySelector("#new-chat-text-popup");
 
-  const chatsListBtns = document.querySelectorAll('.chat-subitem__btn-actions')
-  const chatsListTextPopup = document.querySelector('#chats-list-text-popup')
-  const chatsListMenuPopup = document.querySelector('#chats-list-menu')
-  
-  const asideFooter = document.querySelector('.aside-footer')
-  const asideMenuPopup = document.querySelector('#aside-profile-menu')
+    const botsListItems = document.querySelectorAll(".bots-list__item");
+    const botsListTextPopup = document.querySelector("#bots-list-text-popup");
 
-  const headerChatList = document.querySelector('.header__chat-btn-wrapper')
-  const headerMenuPopup = document.querySelector('#header-chat-menu')
+    const chatsListBtns = document.querySelectorAll(
+      ".chat-subitem__btn-actions"
+    );
+    const chatsListTextPopup = document.querySelector("#chats-list-text-popup");
+    const chatsListMenuPopup = document.querySelector("#chats-list-menu");
 
-  const headerProfileBtn =  document.querySelector('.header-profile__btn')
-  const headerProfileMenu = document.querySelector('#header-profile-menu')
+    const asideFooter = document.querySelector(".aside-footer");
+    const asideMenuPopup = document.querySelector("#aside-profile-menu");
 
-  const copyTextBtn = document.querySelector('#copy-text-btn')
-  const copyTextPopup = document.querySelector('#copy-text-popup')
-  const regenerateTextBtn = document.querySelector('#regenerate-text-btn')
-  const regenerateTextPopup = document.querySelector('#regenerate-text-popup')
+    const headerChatList = document.querySelector(".header__chat-btn-wrapper");
+    const headerMenuPopup = document.querySelector("#header-chat-menu");
 
+    const headerProfileBtn = document.querySelector(".header-profile__btn");
+    const headerProfileMenu = document.querySelector("#header-profile-menu");
 
-  if (toggleNavBtn && toggleNavTextPopup) {
-    tippy(toggleNavBtn, {
-      content: toggleNavTextPopup.innerHTML,
-      allowHTML: true,
-      arrow: true,
-      placement: "right",
-      theme: "text",
-    })
-  }
+    const answers = document.querySelectorAll(".answer");
 
-  if (newChatBtn && newChatTextPopup) {
-    tippy(newChatBtn, {
-      content: newChatTextPopup.innerHTML,
-      allowHTML: true,
-      arrow: true,
-      placement: "bottom",
-      theme: "text",
-    })
-  }
-
-  if (botsListItems && botsListTextPopup) {
-    for (let item of botsListItems) {
-      const itemBtn = item.querySelector('.bots-list__icon--right')
-
-      if (itemBtn) {
-        tippy(itemBtn, {
-          content: botsListTextPopup.innerHTML,
-          allowHTML: true,
-          arrow: true,
-          placement: "right",
-          theme: "text",
-        })
-      }
-    }
-  }
-
-  if (chatsListBtns.length) {
-
-    if (chatsListTextPopup) {
-      for (let btn of chatsListBtns) {
-        tippy(btn, {
-          content: chatsListTextPopup.innerHTML,
-          allowHTML: true,
-          arrow: true,
-          placement: "right",
-          theme: "text",
-        })
-      }
+    if (toggleNavBtn && toggleNavTextPopup) {
+      tippy(toggleNavBtn, {
+        content: toggleNavTextPopup.innerHTML,
+        allowHTML: true,
+        arrow: true,
+        placement: "right",
+        theme: "text",
+      });
     }
 
-    // TODO
-    if (chatsListMenuPopup) {
-      for (let btn of chatsListBtns) {
-        tippy(btn, {
-          content: chatsListMenuPopup.innerHTML,
-          trigger: "click",
-          allowHTML: true,
-          arrow: false,
-          placement: "bottom-end",
-          interactive: true,
-          theme: "list",
-        })
-      }
+    if (newChatBtn && newChatTextPopup) {
+      tippy(newChatBtn, {
+        content: newChatTextPopup.innerHTML,
+        allowHTML: true,
+        arrow: true,
+        placement: "bottom",
+        theme: "text",
+      });
     }
-  }
 
-  if (asideFooter && asideMenuPopup) {
-    tippy(asideFooter, {
-      content: asideMenuPopup.innerHTML,
-      trigger: 'click',
-      allowHTML: true,
-      arrow: false,
-      placement: "top-start",
-      maxWidth: 235,
-      theme: "list",
-    })
-  }
+    if (botsListItems && botsListTextPopup) {
+      for (let item of botsListItems) {
+        const itemBtn = item.querySelector(".bots-list__icon--right");
 
-  if (headerChatList && headerMenuPopup) {
-    tippy(headerChatList, {
-      content: headerMenuPopup.innerHTML,
-      trigger: 'click',
-      allowHTML: true,
-      arrow: false,
-      placement: "bottom-start",
-      interactive: true,
-      theme: "list",
-      onShow(instance) {
-        const headerToggleAsideBtn = document.querySelector("button.header__toggle-btn")
-        console.log('headerToggleAsideBtn', headerToggleAsideBtn.classList.contains('hidden'));
-        if (window.innerWidth < 769 && !headerToggleAsideBtn.classList.contains('hidden')) {
-          instance.setProps({ placement: 'bottom' })
-        } else {
-          instance.setProps({ placement: "bottom-start" })
+        if (itemBtn) {
+          tippy(itemBtn, {
+            content: botsListTextPopup.innerHTML,
+            allowHTML: true,
+            arrow: true,
+            placement: "right",
+            theme: "text",
+          });
         }
       }
-    })
-  }
+    }
 
-  if (headerProfileBtn && headerProfileMenu) {
-    tippy(headerProfileBtn, {
-      content: headerProfileMenu.innerHTML,
-      trigger: 'click',
-      allowHTML: true,
-      arrow: false,
-      placement: "bottom-start",
-      theme: "list",
-    })
-  }
+    if (chatsListBtns.length) {
+      if (chatsListTextPopup) {
+        for (let btn of chatsListBtns) {
+          tippy(btn, {
+            content: chatsListTextPopup.innerHTML,
+            allowHTML: true,
+            arrow: true,
+            placement: "right",
+            theme: "text",
+          });
+        }
+      }
 
-  if (copyTextBtn && copyTextPopup) {
-    tippy(copyTextBtn, {
-      content: copyTextPopup.innerHTML,
-      trigger: 'mouseenter',
-      allowHTML: true,
-      arrow: true,
-      placement: "bottom",
-      animation: false,
-      theme: "text",
-    })
-  }
+      // TODO
+      if (chatsListMenuPopup) {
+        for (let btn of chatsListBtns) {
+          tippy(btn, {
+            content: chatsListMenuPopup.innerHTML,
+            trigger: "click",
+            allowHTML: true,
+            arrow: false,
+            placement: "bottom-end",
+            interactive: true,
+            theme: "list",
+          });
+        }
+      }
+    }
 
-  if (regenerateTextBtn && regenerateTextPopup) {
-    tippy(regenerateTextBtn, {
-      content: regenerateTextPopup.innerHTML,
-      trigger: 'mouseenter',
-      allowHTML: true,
-      arrow: true,
-      placement: "bottom",
-      animation: false,
-      theme: "text",
-    })
+    if (asideFooter && asideMenuPopup) {
+      tippy(asideFooter, {
+        content: asideMenuPopup.innerHTML,
+        trigger: "click",
+        allowHTML: true,
+        arrow: false,
+        placement: "top-start",
+        maxWidth: 235,
+        theme: "list",
+      });
+    }
+
+    if (headerChatList && headerMenuPopup) {
+      tippy(headerChatList, {
+        content: headerMenuPopup.innerHTML,
+        trigger: "click",
+        allowHTML: true,
+        arrow: false,
+        placement: "bottom-start",
+        interactive: true,
+        theme: "list",
+        onShow(instance) {
+          const headerToggleAsideBtn = document.querySelector(
+            "button.header__toggle-btn"
+          );
+          console.log(
+            "headerToggleAsideBtn",
+            headerToggleAsideBtn.classList.contains("hidden")
+          );
+          if (
+            window.innerWidth < 769 &&
+            !headerToggleAsideBtn.classList.contains("hidden")
+          ) {
+            instance.setProps({ placement: "bottom" });
+          } else {
+            instance.setProps({ placement: "bottom-start" });
+          }
+        },
+      });
+    }
+
+    if (headerProfileBtn && headerProfileMenu) {
+      tippy(headerProfileBtn, {
+        content: headerProfileMenu.innerHTML,
+        trigger: "click",
+        allowHTML: true,
+        arrow: false,
+        placement: "bottom-start",
+        theme: "list",
+      });
+    }
+
+    if (answers.length) {
+      for (let answer of answers) {
+        const copyTextBtn = answer.querySelector(".copy-text-btn");
+        const copyTextPopup = answer.querySelector(".copy-text-popup");
+        const regenerateTextBtn = answer.querySelector(".regenerate-text-btn");
+        const regenerateTextPopup = answer.querySelector(
+          ".regenerate-text-popup"
+        );
+
+        console.log(copyTextBtn, copyTextPopup);
+        console.log(regenerateTextBtn, regenerateTextPopup);
+
+        if (copyTextBtn && copyTextPopup) {
+          tippy(copyTextBtn, {
+            content: copyTextPopup.innerHTML,
+            trigger: "mouseenter",
+            allowHTML: true,
+            arrow: true,
+            placement: "bottom",
+            animation: false,
+            theme: "text",
+          });
+        }
+        if (regenerateTextBtn && regenerateTextPopup) {
+          tippy(regenerateTextBtn, {
+            content: regenerateTextPopup.innerHTML,
+            trigger: "mouseenter",
+            allowHTML: true,
+            arrow: true,
+            placement: "bottom",
+            animation: false,
+            theme: "text",
+          });
+        }
+      }
+    }
   }
-}}
+}
 
 function changeColorSubmitBtn() {
   const promptText = document.querySelector("#prompt-text");
@@ -289,42 +307,41 @@ function addFile() {
         const fileInputMenuBtn = document.querySelector(
           `div#tippy-${instance.id} #input-file-link`
         );
-    
+
         fileInputMenuBtn.addEventListener("click", function (event) {
           event.preventDefault();
           fileInput.click();
         });
-      }
+      },
     });
-
   }
 }
 
 function toggleChangeQuestion() {
-  const questions = document.querySelectorAll('.question')
+  const questions = document.querySelectorAll(".question");
 
   if (questions.length) {
     for (let question of questions) {
-      const changeQuestionBtn = question.querySelector('.question__change-btn')
-      const escapeQuestionBtn = question.querySelector('.btn-escape')
+      const changeQuestionBtn = question.querySelector(".question__change-btn");
+      const escapeQuestionBtn = question.querySelector(".btn-escape");
 
       if (changeQuestionBtn && escapeQuestionBtn) {
-        const questionTextBody = question.querySelector('.question__body')
-        const changeQuestionBody = question.querySelector('.change-question')
+        const questionTextBody = question.querySelector(".question__body");
+        const changeQuestionBody = question.querySelector(".change-question");
 
-        changeQuestionBtn.addEventListener('click', function(event) {
-          event.preventDefault()
+        changeQuestionBtn.addEventListener("click", function (event) {
+          event.preventDefault();
 
-          questionTextBody.classList.add('hidden')
-          changeQuestionBody.classList.remove('hidden')
-        })
+          questionTextBody.classList.add("hidden");
+          changeQuestionBody.classList.remove("hidden");
+        });
 
-        escapeQuestionBtn.addEventListener('click', function(event) {
-          event.preventDefault()
+        escapeQuestionBtn.addEventListener("click", function (event) {
+          event.preventDefault();
 
-          questionTextBody.classList.remove('hidden')
-          changeQuestionBody.classList.add('hidden')
-        })
+          questionTextBody.classList.remove("hidden");
+          changeQuestionBody.classList.add("hidden");
+        });
       }
     }
   }
