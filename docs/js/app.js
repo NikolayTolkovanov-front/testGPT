@@ -192,10 +192,7 @@ function tippyAll() {
           const headerToggleAsideBtn = document.querySelector(
             "button.header__toggle-btn"
           );
-          console.log(
-            "headerToggleAsideBtn",
-            headerToggleAsideBtn.classList.contains("hidden")
-          );
+
           if (
             window.innerWidth < 769 &&
             !headerToggleAsideBtn.classList.contains("hidden")
@@ -227,9 +224,6 @@ function tippyAll() {
         const regenerateTextPopup = answer.querySelector(
           ".regenerate-text-popup"
         );
-
-        console.log(copyTextBtn, copyTextPopup);
-        console.log(regenerateTextBtn, regenerateTextPopup);
 
         if (copyTextBtn && copyTextPopup) {
           tippy(copyTextBtn, {
