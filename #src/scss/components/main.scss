@@ -144,10 +144,18 @@
     display: flex;
     gap: 16px;
 
-
     &:hover {
       .answer__btns {
         opacity: 1;
+      }
+    }
+
+    &:not(:last-child) {
+      .regenerate-text-btn {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
       }
     }
 

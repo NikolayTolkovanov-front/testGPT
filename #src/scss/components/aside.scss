@@ -10,7 +10,7 @@
   overflow-x: hidden;
   scrollbar-color: #424242 transparent;
   position: relative;
-  opacity: 1;  
+  opacity: 1;
   visibility: visible;
 
   &.hidden {
@@ -34,7 +34,8 @@
     align-items: center;
     min-height: 60px;
 
-    .toggle-nav, .new-chat {
+    .toggle-nav,
+    .new-chat {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -56,79 +57,26 @@
     }
   }
 
-
   &-content {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
     padding-right: 8px;
 
-    .bots-list {
+    .bots-list-btn {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      column-gap: 6px;
+      align-items: center;
+      border: 1px solid hsla(0, 0%, 100%, 0.15);
+      border-radius: 9999px;
+      padding: 8px 14px;
+      background-color: transparent;
+      color: $primary;
 
-      &__item {
-        padding: 0 8px;
-        border-radius: 8px;
-
-        &:hover {
-          background-color: $secondary;
-        }
+      &:hover {
+        background-color: #2f2f2f;
       }
-
-      &__link {
-        height: 40px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-        &:hover {
-          .bots-list__icon--right {
-            svg {
-              fill: $primary;
-            }
-          }
-        }
-      }
-
-      &__icon {
-        &--left, &--right {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          border-radius: 9999px;
-          overflow: hidden;
-
-          & svg, img {
-            width: 24px;
-            height: 24px;
-            flex: 0 0 24px;
-            object-fit: cover;
-            fill: $primary;
-          }
-        }
-
-        &--left {
-          & svg {
-            fill: $primary;
-          }
-        }
-
-        &--right {
-          & svg {
-            fill: none;
-          }
-        }
-      }
-
-      &__item-text {
-        flex-grow: 1;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 20px;
-        color: $primary;
-      }
-
     }
 
     .chats-list {
@@ -191,19 +139,19 @@
             fill: $primary;
           }
         }
-      
-          &__btn-actions {
-            width: 18px;
-            height: 18px;
-            flex: 0 0 18px;
 
-            & svg {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              fill: none;
-            }
+        &__btn-actions {
+          width: 18px;
+          height: 18px;
+          flex: 0 0 18px;
+
+          & svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            fill: none;
           }
+        }
       }
 
       .chat-link {
@@ -229,42 +177,63 @@
   &-footer {
     padding: 8px 0;
 
-      &__profile {
-        display: none;
-        width: 100%;
-        gap: 8px;
-        padding: 8px;
-        align-items: center;
-        overflow: hidden;
-      }
-  
-      &__profile-img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 32px;
-        height: 32px;
-        flex: 0 0 32px;
-        border-radius: 999px;
-        overflow: hidden;
+    &__link {
+      display: none;
+      width: 100%;
+      gap: 8px;
+      padding: 8px;
+      align-items: center;
+      overflow: hidden;
+    }
 
-        & img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 999px;
-        }
+    &__link-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      border-radius: 999px;
+      overflow: hidden;
+
+      & svg,
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 999px;
+        fill: $primary;
       }
-  
-      &__profile-name {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 20px;
-        color: $primary;
-        flex-grow: 1;
-        text-align: left;
-        white-space: nowrap;
-      }
+    }
+
+    &__link-name {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      color: $primary;
+      flex-grow: 1;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    &__counter {
+      padding: 8px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      color: $primary;
+      flex-grow: 1;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    &__counter-number {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      color: $primary;
+    }
   }
 }
 
@@ -293,7 +262,7 @@
     z-index: 9999;
 
     &-footer {
-      &__profile {
+      &__link {
         display: flex;
       }
     }

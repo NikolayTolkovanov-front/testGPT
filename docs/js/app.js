@@ -82,8 +82,8 @@ function tippyAll() {
     const newChatBtn = document.querySelector(".new-chat");
     const newChatTextPopup = document.querySelector("#new-chat-text-popup");
 
-    const botsListItems = document.querySelectorAll(".bots-list__item");
-    const botsListTextPopup = document.querySelector("#bots-list-text-popup");
+    const botsListBtn = document.querySelector(".bots-list-btn");
+    const botsListTextPopup = document.querySelector("#aside-bots-list");
 
     const chatsListBtns = document.querySelectorAll(
       ".chat-subitem__btn-actions"
@@ -91,14 +91,8 @@ function tippyAll() {
     const chatsListTextPopup = document.querySelector("#chats-list-text-popup");
     const chatsListMenuPopup = document.querySelector("#chats-list-menu");
 
-    const asideFooter = document.querySelector(".aside-footer");
-    const asideMenuPopup = document.querySelector("#aside-profile-menu");
-
     const headerChatList = document.querySelector(".header__chat-btn-wrapper");
     const headerMenuPopup = document.querySelector("#header-chat-menu");
-
-    const headerProfileBtn = document.querySelector(".header-profile__btn");
-    const headerProfileMenu = document.querySelector("#header-profile-menu");
 
     const answers = document.querySelectorAll(".answer");
 
@@ -122,20 +116,17 @@ function tippyAll() {
       });
     }
 
-    if (botsListItems && botsListTextPopup) {
-      for (let item of botsListItems) {
-        const itemBtn = item.querySelector(".bots-list__icon--right");
-
-        if (itemBtn) {
-          tippy(itemBtn, {
-            content: botsListTextPopup.innerHTML,
-            allowHTML: true,
-            arrow: true,
-            placement: "right",
-            theme: "text",
-          });
-        }
-      }
+    if (botsListBtn && botsListTextPopup) {
+      tippy(botsListBtn, {
+        content: botsListTextPopup.innerHTML,
+        trigger: 'click',
+        allowHTML: true,
+        arrow: false,
+        placement: "bottom-end",
+        interactive: true,
+        maxWidth: 210,
+        theme: "list",
+      });
     }
 
     if (chatsListBtns.length) {
@@ -167,18 +158,6 @@ function tippyAll() {
       }
     }
 
-    if (asideFooter && asideMenuPopup) {
-      tippy(asideFooter, {
-        content: asideMenuPopup.innerHTML,
-        trigger: "click",
-        allowHTML: true,
-        arrow: false,
-        placement: "top-start",
-        maxWidth: 235,
-        theme: "list",
-      });
-    }
-
     if (headerChatList && headerMenuPopup) {
       tippy(headerChatList, {
         content: headerMenuPopup.innerHTML,
@@ -202,17 +181,6 @@ function tippyAll() {
             instance.setProps({ placement: "bottom-start" });
           }
         },
-      });
-    }
-
-    if (headerProfileBtn && headerProfileMenu) {
-      tippy(headerProfileBtn, {
-        content: headerProfileMenu.innerHTML,
-        trigger: "click",
-        allowHTML: true,
-        arrow: false,
-        placement: "bottom-start",
-        theme: "list",
       });
     }
 
