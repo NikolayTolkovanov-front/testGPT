@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   toggleAsideByOverflow();
   tippyAll();
   toggleChangeQuestion();
+  scrollToLastMessage()
 });
 
 function isWebP() {
@@ -305,6 +306,18 @@ function toggleChangeQuestion() {
           changeQuestionBody.classList.add("hidden");
         });
       }
+    }
+  }
+}
+ 
+function scrollToLastMessage() {
+  const messages = document.querySelectorAll('.message')
+
+  if (messages.length) {
+    const lastMessage = messages[messages.length - 1]
+
+    if (lastMessage) {
+      lastMessage.scrollIntoView({behavior: 'smooth'})
     }
   }
 }
